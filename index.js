@@ -84,7 +84,10 @@ class LokiTransport extends Transport {
     }`
 
     // Make sure all label values are strings
-    lokiLabels = Object.fromEntries(Object.entries(lokiLabels).map(([key, value]) => [key, value ? value.toString() : value]))
+    lokiLabels = Object.keys(lokiLabels).reduce((acc, key) => {
+      acc[key] = lokiLabels[key] ? lokiLabels[key].toString() : lokiLabels[key]
+      return acc
+    }, {})
 
     // Construct the log to fit Grafana Loki's accepted format
     let ts
