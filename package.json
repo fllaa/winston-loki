@@ -1,5 +1,5 @@
 {
-  "name": "winston-loki",
+  "name": "@flla/winston-loki",
   "version": "6.1.3",
   "description": "A Winston transport for Grafana Loki",
   "keywords": [
